@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Vidly.Models.Movie>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Vidly</h1>
+    <p class="lead">Vidly is the best video renting store app out there.</p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        @*<h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+
+        <canvas id="firstChart" height="300"></canvas>
+    </div>
+
+    <div class="col-md-6">
+        @*<h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+        <canvas id="thirdChart" height="300"></canvas>
+    </div>
+</div>
+
+@section Scripts{
+    @*Movies JSON*@
+    <script>var movies = @Html.Raw(Json.Encode(Model))</script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ViewScripts/Home/IndexReadOnly.js")"></script>
+}
